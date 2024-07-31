@@ -17,10 +17,25 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from MiProyecto.views import bienvenida, bienvenidaRojo
+from MiProyecto.views import (bienvenida, 
+                              bienvenidaRojo, 
+                              categoriaEdad, 
+                              obtenerMomentoActual, 
+                              contenidoHTML, 
+                              miPrimeraPlantilla,
+                              plantillaParametro,
+                              plantillaCargador,
+                              plantillaShorCut,)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('bienvenida/', bienvenida),
-    path('bienvenidaStyle/', bienvenidaRojo)
+    path('bienvenidaStyle/', bienvenidaRojo),
+    path('categoriaEdad/<int:edad>', categoriaEdad),
+    path('obtenerMomentoActual/', obtenerMomentoActual),
+    path('contenidoHTML/<nombre>/<int:edad>', contenidoHTML),
+    path('miPrimeraPlantilla/', miPrimeraPlantilla),
+    path('plantillaParametro/', plantillaParametro),
+    path('plantillaCargador/', plantillaCargador),
+    path('plantillaShorCut/', plantillaShorCut),
 ]
